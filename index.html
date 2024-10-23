@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Rich Presence Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Set Your Discord Rich Presence</h1>
+    <div class="instructions">Please fill in the details below:</div>
+    <form action="/setPresence" method="POST">
+      <label for="clientId">Client ID:</label>
+      <input type="text" id="clientId" name="clientId" required>
+      
+      <label for="details">Details:</label>
+      <input type="text" id="details" name="details" required>
+      
+      <label for="state">State:</label>
+      <input type="text" id="state" name="state" required>
+      
+      <label for="largeImageKey">Large Image Key (Imgur URL):</label>
+      <input type="url" id="largeImageKey" name="largeImageKey" required>
+      
+      <label for="largeImageText">Large Image Text:</label>
+      <input type="text" id="largeImageText" name="largeImageText" required>
+      
+      <label for="smallImageKey">Small Image Key (Imgur URL):</label>
+      <input type="url" id="smallImageKey" name="smallImageKey" required>
+      
+      <label for="smallImageText">Small Image Text:</label>
+      <input type="text" id="smallImageText" name="smallImageText" required>
+      
+      <label for="button1Label">Button 1 Label:</label>
+      <input type="text" id="button1Label" name="button1Label" required>
+      
+      <label for="button1Url">Button 1 URL:</label>
+      <input type="url" id="button1Url" name="button1Url" required>
+      
+      <label for="button2Label">Button 2 Label:</label>
+      <input type="text" id="button2Label" name="button2Label" required>
+      
+      <label for="button2Url">Button 2 URL:</label>
+      <input type="url" id="button2Url" name="button2Url" required>
+      
+      <button type="submit">Set Presence</button>
+    </form>
+  </div>
+</body>
+</html>

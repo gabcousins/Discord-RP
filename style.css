@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: #ffffff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.instructions {
+  text-align: center;
+  font-size: 0.9em;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="url"],
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #0984e3;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #74b9ff;
+}
+
+/* Success Container Style */
+.success-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.success-container h1 {
+  color: #2ecc71; /* Green color for success */
+}
+
+.success-container p {
+  margin: 15px 0;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0984e3;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.button-link:hover {
+  background-color: #74b9ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;  /* Full width on smaller screens */
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5em;  /* Smaller font size for headings */
+  }
+
+  input[type="text"],
+  input[type="url"],
+  input[type="number"],
+  button {
+    font-size: 0.9em;  /* Slightly smaller font for inputs and buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;  /* Reduce padding on very small screens */
+  }
+
+  h1 {
+    font-size: 1.3em;  /* Even smaller heading on very small screens */
+  }
+
+  input[type="text"],
+  input[type="url"],
+  input[type="number"],
+  button {
+    font-size: 0.8em;  /* Smaller inputs and buttons */
+    padding: 8px;  /* Smaller padding */
+  }
+}

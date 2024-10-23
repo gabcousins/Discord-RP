@@ -8,8 +8,7 @@ const rpc = new DiscordRPC.Client({ transport: 'ipc' });
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));  // Serve static files like CSS
-app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static('.'));  // Serve static files like CSS from the root
 
 // Function to set Rich Presence
 async function setRichPresence(clientId, details, state, largeImageKey, largeImageText, smallImageKey, smallImageText, button1Label, button1Url, button2Label, button2Url) {
@@ -36,7 +35,7 @@ async function setRichPresence(clientId, details, state, largeImageKey, largeIma
 
 // Route to display the form (index.html)
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'views', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 // Handle form submission to set Rich Presence
@@ -48,7 +47,7 @@ app.post('/setPresence', (req, res) => {
 
   setRichPresence(clientId, details, state, largeImageKey, largeImageText, smallImageKey, smallImageText, button1Label, button1Url, button2Label, button2Url)
     .then(() => {
-      res.sendFile(path.join(__dirname, 'views', 'success.html')); // Redirect to success page
+      res.sendFile(path.join(__dirname, 'success.html')); // Redirect to success page
     })
     .catch(err => {
       console.error('Error setting Rich Presence:', err);
@@ -57,5 +56,6 @@ app.post('/setPresence', (req, res) => {
 });
 
 // Start the server
-
-
+app.listen(3000, () => {
+  console.log('App running on http://localhost:3000');
+});
