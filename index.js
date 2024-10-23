@@ -40,10 +40,16 @@ app.get('/', (req, res) => {
 
 // Handle form submission to set Rich Presence
 app.post('/setPresence', (req, res) => {
+  console.log('Form submitted:', req.body); // Log form data
   const {
     clientId, details, state, largeImageKey, largeImageText, smallImageKey, smallImageText,
     button1Label, button1Url, button2Label, button2Url
   } = req.body;
+
+  // Validate received data
+  if (!clientId) {
+    return res.status(400).send('Client ID is required');
+  }
 
   setRichPresence(clientId, details, state, largeImageKey, largeImageText, smallImageKey, smallImageText, button1Label, button1Url, button2Label, button2Url)
     .then(() => {
