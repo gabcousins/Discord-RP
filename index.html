@@ -11,7 +11,7 @@
   <div class="container">
     <h1>Set Your Discord Rich Presence</h1>
     <div class="instructions">Please fill in the details below:</div>
-    <form action="/setPresence" method="POST">
+    <form id="presenceForm">
       <label for="clientId">Client ID:</label>
       <input type="text" id="clientId" name="clientId" required>
       
@@ -48,5 +48,7 @@
       <button type="submit">Set Presence</button>
     </form>
   </div>
+  
+  <script src="script.js"></script> <!-- Link to the JavaScript file -->
 </body>
 </html>
